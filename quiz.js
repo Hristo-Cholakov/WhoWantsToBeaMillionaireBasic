@@ -21,16 +21,15 @@
     for (var i = 0; i < counter; i++) {
       var questionLetter = String.fromCharCode(questionOptions);
       console.log(questionLetter + ": " + questionArray[position].answers[i]);
-      questionOptions++;
-    
+      questionOptions++;    
     };
-    givenAnswer = prompt("What's your answer?");
-     
+
+    givenAnswer = prompt("What's your answer?").toUpperCase();
+       
   };
 
   function checkAnswer() {
-    console.log(typeof givenAnswer);
-    console.log(typeof questionArray[position].correctAnswer);
+    
     if (givenAnswer === questionArray[position].correctAnswer) {
       score++;
       console.log("Correct! \nScore is now: " + score);
@@ -39,7 +38,7 @@
     }
   };
 
-  while ("exit" !== givenAnswer) {
+  while ("EXIT" !== givenAnswer) {
     questionOptions = 65;
     randomizer();
     checkAnswer();
